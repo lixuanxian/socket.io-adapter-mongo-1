@@ -1,18 +1,19 @@
-# socket.io-adapter-mongo
+# socket.io-adapter-mongoose
 
-[![Build Status](https://travis-ci.org/mother/socket.io-adapter-mongo.svg?branch=master)](https://travis-ci.org/mother/socket.io-adapter-mongo)
-
+Modify from <https://github.com/mother/socket.io-adapter-mongo>.
+**socket.io-adapter-mongoose** support mongoose v4
+ 
 ## Installing
 
 ```
-npm install @mother/socket.io-adapter-mongo --save
+npm install socket.io-adapter-mongoose --save
 ```
 
 ## How to use
 
 ```js
 const io = require('socket.io')(3000);
-const mongoAdapter = require('@mother/socket.io-adapter-mongo');
+const mongoAdapter = require('socket.io-adapter-mongoose');
 io.adapter(mongoAdapter('mongodb://localhost/test'));
 ```
 
@@ -20,8 +21,6 @@ By running socket.io with the `socket.io-adapter-mongo` adapter you can run
 multiple socket.io instances in different processes or servers that can
 all broadcast and emit events to and from each other.
 
-If you need to emit events to socket.io instances from a non-socket.io
-process, you should use [socket.io-emitter](https://github.com/socketio/socket.io-emitter).
 
 ## API
 

@@ -895,22 +895,25 @@ module.exports = function adapter(uriArg, optionsArg = {}) {
    const collectionSize = options.collectionSize || 100000 // 100KB
    const mongoose = options.mongoose || new Mongoose()
    if (!options.mongoose && uri) {
-      mongoose.connect(uri)
+      mongoose.Promise = global.Promise;
+      mongoose.connect(uri,{
+         useMongoClient: true,
+      })
    }
 
    // mongoose.set('debug', true)
    // Message Schema & Model
-   let Message
-   if (mongoose.modelNames().includes(collectionName)) {
-      Message = mongoose.model(collectionName)
-   } else {
+   // if (mongoose.modelNames().includes(collectionName)) {
+   //    Message = mongoose.model(collectionName)
+   // } else {
+      
       const messageSchema = new mongoose.Schema({
          channel: { type: String, trim: true },
          msg: { type: Buffer }
       }, { capped: collectionSize })
 
-      Message = mongoose.model(collectionName, messageSchema)
-   }
+      let Message = mongoose.model(collectionName, messageSchema)
+   // }
 
    return MongoAdapter.bind(null, {
       model: Message,
