@@ -897,7 +897,8 @@ module.exports = function adapter(uriArg, optionsArg = {}) {
    if (!options.mongoose && uri) {
       mongoose.Promise = global.Promise;
       mongoose.connect(uri,{
-         useMongoClient: true,
+         useNewUrlParser:true,
+         useUnifiedTopology:true
       })
    }
 

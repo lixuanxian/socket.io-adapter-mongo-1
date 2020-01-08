@@ -1,7 +1,7 @@
 # socket.io-adapter-mongoose
 
 Modify from <https://github.com/mother/socket.io-adapter-mongo>.
-**socket.io-adapter-mongoose** support mongoose v4
+**socket.io-adapter-mongoose** support mongoose v5
  
 ## Installing
 
