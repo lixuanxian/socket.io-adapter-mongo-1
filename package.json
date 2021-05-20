@@ -1,6 +1,6 @@
 {
   "name": "socket.io-adapter-mongoose",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "socket.io adapter for mongoose",
   "license": "MIT",
   "repository": {
@@ -20,7 +20,8 @@
     "index.js"
   ],
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "release": "npm  publish --registry=https://registry.npmjs.org"
   },
   "dependencies": {
     "notepack.io": "2.1.3",
