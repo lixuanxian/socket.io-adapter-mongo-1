@@ -43,7 +43,7 @@ class MongoAdapter extends Adapter {
          }
 
          return new Promise((resolve, reject) => {
-            this.model.collection.insert({
+            this.model.collection.insertOne({
                channel: 'placeholder',
                msg: Buffer.from('placeholder')
             }, {
